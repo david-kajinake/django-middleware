@@ -129,7 +129,9 @@ MAILERS = {
     },
 }
 
+AUTH_USER_MODEL= 'app.User'
+
 #Banned IPs that the middleware can block
 BANNED_IPS= [
-'127.0.0.1'
+'127.0.0.5'
 ]

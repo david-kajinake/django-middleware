@@ -7,7 +7,20 @@
 </head>
 <body>
     <h1>
+
+        Hello 
+        {% if request.user.name %}
+            {{request.user.name}}
+         {% elif request.user.username%}
+            {{request.user.username}}
+        {% endif %}
+    </h1>
+    <h1>
         This is a HomePage for Django-Middleware's project's templates
     </h1>
+    <form action="{% url 'user_logout' %}" method="POST">
+        {%csrf_token%}
+        <button>Logout</button>
+    </form>
 </body>
 </html>
