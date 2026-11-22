@@ -1,12 +1,16 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
+from .models import User
 
 
 # Create your views here.
 def home(request):
     if request.user.is_authenticated:
-        return render(request, 'app/index.html')
+        users= User.objects.all()
+        return render(request, 'app/index.html',{
+            "users": users
+        })
     messages.info(request, 'You must login')
     return redirect('user_login')
 

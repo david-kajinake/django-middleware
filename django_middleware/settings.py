@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'app.middlewares.IpBlacklistMiddleware',
-    
+    'app.middlewares.UserLastSeenMiddleware',
 ]
 
 ROOT_URLCONF = 'django_middleware.urls'
